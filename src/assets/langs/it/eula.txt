@@ -1,0 +1,21 @@
+EULA del lanciatore Battly
+
+Il presente Contratto di licenza con l'utente finale (EULA) è un accordo legale tra te (Utente) e TECNO BROS (Creatore). Utilizzando Battly Launcher (Software), accetti i termini di questo EULA.
+
+1. Licenza d'uso
+1.1. All'utente viene concessa una licenza personale, non trasferibile e revocabile per utilizzare il Software e accedere a Minecraft.
+1.2. È necessario utilizzare il Software in conformità con le leggi e le restrizioni stabilite nel presente EULA.
+
+2. Restrizioni
+2.1. Non è consentito copiare, modificare, distribuire, vendere, affittare, concedere in sublicenza, decompilare, decodificare o tentare di ottenere il codice sorgente del Software.
+2.2. Non è possibile utilizzare il Software per attività illegali o che violino i diritti di proprietà intellettuale di terzi.
+23. Non è possibile utilizzare il Software per diffamare, molestare, minacciare o danneggiare altri utenti.
+
+3. Proprietà intellettuale
+3.1. Il Software e tutti i diritti di proprietà intellettuale ad esso associati sono di proprietà esclusiva di TECNO BROS.
+3.2. L'utente riconosce di non acquisire alcun diritto di proprietà sul Software, ad eccezione della licenza limitata concessa nel presente EULA.
+
+4. Garanzia e responsabilità
+4.1. Il Software viene fornito "così com'è", senza garanzie esplicite o implicite relative al suo funzionamento o all'idoneità per uno scopo particolare.
+4.2. L'utilizzo del Software è a proprio rischio e TECNO BROS non sarà responsabile per eventuali danni che potrebbero derivare dall'uso del Software.
+4.3. Ci riserviamo il diritto di sospendere o interrompere l'accesso al Software in qualsiasi momento senza preavviso.

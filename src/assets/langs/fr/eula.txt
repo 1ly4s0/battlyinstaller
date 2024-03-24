@@ -1,0 +1,21 @@
+EULA du lanceur Battly
+
+Ce contrat de licence utilisateur final (CLUF) est un accord juridique entre vous (utilisateur) et TECNO BROS (créateur). En utilisant Battly Launcher (logiciel), vous acceptez les termes de ce CLUF.
+
+1. Licence d'utilisation
+1.1. Vous bénéficiez d'une licence personnelle, non transférable et révocable pour utiliser le logiciel et accéder à Minecraft.
+1.2. Vous devez utiliser le logiciel conformément aux lois et restrictions énoncées dans le présent CLUF.
+
+2. Restrictions
+2.1. Vous ne pouvez pas copier, modifier, distribuer, vendre, louer, sous-licencier, décompiler, procéder à une ingénierie inverse ou tenter d'obtenir le code source du Logiciel.
+2.2. Vous ne pouvez pas utiliser le Logiciel pour des activités illégales ou portant atteinte aux droits de propriété intellectuelle de tiers.
+23. Vous ne pouvez pas utiliser le Logiciel pour diffamer, harceler, menacer ou nuire à d'autres utilisateurs.
+
+3. Propriété intellectuelle
+3.1. Le Logiciel et tous les droits de propriété intellectuelle associés sont la propriété exclusive de TECNO BROS.
+3.2. Vous reconnaissez que vous n'acquérez aucun droit de propriété sur le logiciel, à l'exception de la licence limitée accordée dans le présent CLUF.
+
+4. Garantie et responsabilité
+4.1. Le Logiciel est fourni « tel quel », sans garantie expresse ou implicite quant à son fonctionnement ou à son adéquation à un usage particulier.
+4.2. Vous utilisez le Logiciel à vos propres risques et TECNO BROS ne sera pas responsable de tout dommage pouvant résulter de l'utilisation du Logiciel.
+4.3. Nous nous réservons le droit de suspendre ou d'interrompre l'accès au Logiciel à tout moment et sans préavis.

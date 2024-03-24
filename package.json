@@ -1,0 +1,54 @@
+{
+  "name": "battlyinstaller",
+  "productName": "Battly Launcher Installer",
+  "version": "1.0.0",
+  "description": "El instalador de Battly Launcher - El mejor Launcher de Minecraft premium y no premium.",
+  "author": "TECNO BROS <contacto@tecnobros.es>",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "cross-env-shell NODE_ENV=dev electron .",
+    "dev": "nodemon --exec npm start",
+    "build": "electron-builder -p never"
+  },
+  "nodemonConfig": {
+    "ext": "js,html,css,ejs"
+  },
+  "keywords": [],
+  "license": "ISC",
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "electron": "^29.1.0",
+    "electron-builder": "^24.13.3",
+    "nodemon": "^3.1.0"
+  },
+  "dependencies": {
+    "adm-zip": "^0.5.10",
+    "child_process": "^1.0.2",
+    "ejs-electron": "^3.0.0",
+    "protocol": "^0.1.4",
+    "windows-shortcuts": "^0.1.6"
+  },
+  "build": {
+    "appId": "com.tecnobros.battlylauncherinstaller",
+    "productName": "Battly Launcher",
+    "copyright": "Copyright © 2024 TECNO BROS",
+    "win": {
+      "artifactName": "${productName}-Windows.${ext}",
+      "icon": "src/assets/icon.ico",
+      "target": {
+        "target": "portable",
+        "arch": [
+          "ia32",
+          "x64"
+        ]
+      }
+    },
+    "portable": {
+      "requestExecutionLevel": "user",
+      "useZip": true,
+      "splashImage": "src/assets/images/splash.bmp"
+    },
+    "asar": false
+  }
+}
