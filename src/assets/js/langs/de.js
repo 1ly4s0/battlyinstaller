@@ -6,13 +6,13 @@ const strings = {
   "battly-eula-accept": "Akzeptieren Sie die EULA von Battly Launcher.",
   "what-do-you-want-to-do": "Was wollen Sie tun?",
   "install-battly": "Instalar Battly",
-    "installing-battly": "Battly installieren...",
+  "installing-battly": "Battly installieren...",
   "repair-battly": "Repair Battly (in Kürze)",
   "uninstall-battly": "Battly deinstallieren (Weiter)",
   "where-do-you-want-to-install-battly": "Wo möchten Sie Battly installieren?",
   "all-users": "Für alle Benutzer",
   "custom-path": "Personalisierte Route",
-    "only-for": "Nur für",
+  "only-for": "Nur für",
   "search": "Suche",
   "opera-install-text": "Opera installieren",
   "opera-install-text-description": "Wenn Sie auf Weiter klicken, stimmen Sie der Installation von Opera auf Ihrem Betriebssystem über Battly zu. >Wenn Sie Opera nicht mit Battly installieren möchten, klicken Sie auf \"Ablehnen\", um den Installationsprozess zu starten.",
@@ -42,6 +42,12 @@ const strings = {
   "installation-completed-successfully": "Installation erfolgreich abgeschlossen",
   "end": "Ende",
   "are-you-sure-opera": "Sind Sie sicher, dass Sie Opera nicht installieren möchten?\nWenn Sie es installieren, ERHALTEN SIE EINE EINZIGARTIGE OPERA-SCHICHT IN IHREM BATTLY-PROFIL. \n\nDrücken Sie auf \"Akzeptieren\", wenn Sie Opera installieren möchten, und auf \"Abbrechen\", wenn Sie es nicht installieren möchten.",
+  "battly-is-running": "Battly ist geöffnet.",
+  "close-battly-question": "Battly ist geöffnet.\nMöchten Sie es automatisch schließen, um die Installation fortzusetzen? Falls es sich nicht schließt, müssen Sie es manuell schließen, um die Installation fortzusetzen.",
+  "installation-aborted": "Installation abgebrochen, weil Battly ausgeführt wird.",
+  "cannot-close-battly": "Battly konnte nicht geschlossen werden. Versuchen Sie es manuell und klicken Sie auf OK.",
+  "battly-closed-successfully": "Battly wurde erfolgreich geschlossen.",
+  "opera-installation-aborted": "Opera konnte nicht installiert werden, aber die Installation wird fortgesetzt."
 };
 
 

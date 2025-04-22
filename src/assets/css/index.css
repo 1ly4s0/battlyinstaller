@@ -290,6 +290,7 @@ a {
   flex-wrap: wrap;
   margin-top: -5px;
   margin-right: -5px;
+  cursor: pointer;
 }
 
 .social.battly-x3y7zn.battly-x3y7zn {
@@ -966,6 +967,9 @@ a {
   background-color: #3ac172;
 }
 
-div, button, input, textarea {
+div,
+button,
+input,
+textarea {
   border-radius: 10px !important;
 }

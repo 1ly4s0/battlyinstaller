@@ -5,14 +5,14 @@ const strings = {
   "battly-eula": "CLUF de Battly Launcher",
   "battly-eula-accept": "Accepter le CLUF de Battly Launcher.",
   "what-do-you-want-to-do": "Que voulez-vous faire ?",
-    "install-battly": "Instalar Battly",
-    "installing-battly": "Installation de Battly...",
+  "install-battly": "Instalar Battly",
+  "installing-battly": "Installation de Battly...",
   "repair-battly": "Réparation Battly (bientôt disponible)",
   "uninstall-battly": "Désinstaller Battly (Suivant)",
   "where-do-you-want-to-install-battly": "Où voulez-vous installer Battly ?",
   "all-users": "Pour tous les utilisateurs",
   "custom-path": "Itinéraire personnalisé",
-    "only-for": "Seulement pour",
+  "only-for": "Seulement pour",
   "search": "Recherche",
   "opera-install-text": "Installer Opera",
   "opera-install-text-description": "Si vous appuyez sur le bouton suivant, vous acceptez d'installer Opera sur votre système d'exploitation via Battly. >Sinon, si vous ne voulez pas installer Opera avec Battly, appuyez sur le bouton de refus et vous suivrez le processus d'installation.",
@@ -42,6 +42,12 @@ const strings = {
   "installation-completed-successfully": "L'installation a été effectuée avec succès",
   "end": "Fin",
   "are-you-sure-opera": "Êtes-vous sûr de ne pas vouloir installer Opera ?\nSi vous l'installez, VOUS OBTIENDREZ UNE COUCHE UNIQUE D'OPERA DANS VOTRE PROFIL BATTLY. \n\nAppuyez sur accepter si vous voulez installer Opera et annuler si vous ne voulez pas l'installer.",
+  "battly-is-running": "Battly est ouvert.",
+  "close-battly-question": "Battly est ouvert.\nVoulez-vous le fermer automatiquement pour poursuivre l'installation ? S'il ne se ferme pas, vous devrez le fermer manuellement pour poursuivre l'installation.",
+  "installation-aborted": "Installation annulée car Battly est en cours d'exécution.",
+  "cannot-close-battly": "Impossible de fermer Battly. Essayez manuellement puis cliquez sur OK.",
+  "battly-closed-successfully": "Battly a été fermé avec succès.",
+  "opera-installation-aborted": "Opera n'a pas pu être installé, mais l'installation se poursuivra."
 };
 
 

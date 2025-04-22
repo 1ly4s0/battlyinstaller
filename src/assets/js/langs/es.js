@@ -50,6 +50,12 @@ const strings = {
     "uninstall-err-1": "No se pudo encontrar la instalación de Battly en el sistema.",
     "uninstall-err-2": "No se pudo encontrar la ubicación de instalación para Battly.",
     "uninstall-err-3": "El archivo de desinstalación no se encontró en la ubicación esperada.",
+    "battly-is-running": "Battly está abierto.",
+    "close-battly-question": "Battly está abierto.\n¿Quieres cerrarlo automáticamente para continuar la instalación? En el caso de que no se cierre, deberás cerrarlo manualmente para continuar la instalación.",
+    "installation-aborted": "Instalación cancelada porque Battly está en ejecución.",
+    "cannot-close-battly": "No se pudo cerrar Battly. Intenta manualmente y pulsa Aceptar.",
+    "battly-closed-successfully": "Battly se ha cerrado correctamente.",
+    "opera-installation-aborted": "Opera no se pudo instalar, pero la instalación continuará."
 };
 
 export default strings;

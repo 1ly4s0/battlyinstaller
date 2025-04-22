@@ -68,6 +68,7 @@ function CopyToAppData(redirectedUrl) {
 // CopyToAppData();
 
 
+
 document.addEventListener('DOMContentLoaded', async () => {
     document.getElementById("reject").style.display = "none";
 
@@ -77,6 +78,21 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     document.getElementById("close").addEventListener("click", () => {
         ipcRenderer.send('close');
+    });
+
+    const { shell } = require('electron');
+
+    document.getElementById("web")?.addEventListener('click', async function () {
+        console.log("web");
+        shell.openExternal('https://battlylauncher.com')
+    });
+
+    document.getElementById("youtube")?.addEventListener('click', async function () {
+        shell.openExternal('https://youtube.com/tecnobros')
+    });
+
+    document.getElementById("discord")?.addEventListener('click', async function () {
+        shell.openExternal('https://discord.gg/tecno-bros-885235460178342009')
     });
 
 

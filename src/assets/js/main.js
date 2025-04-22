@@ -121,13 +121,13 @@ async function ensureBattlyClosed() {
 
     // Abre el Administrador de tareas para que el usuario vea el proceso
     spawn('taskmgr', { detached: true, stdio: 'ignore' }).unref();
-    log(`⚠️  ${LangStrings['battly-is-running'] || 'Battly Launcher está abierto.'}`);
+    log(`⚠️  ${LangStrings['battly-is-running']}`);
 
     let keepTrying = true;
     while (keepTrying && isBattlyRunning()) {
-        const ask = confirm(LangStrings['close-battly-question'] || 'Battly Launcher está abierto.\n¿Quieres cerrarlo automáticamente para continuar la instalación?');
+        const ask = confirm(LangStrings['close-battly-question'] || '');
         if (!ask) {
-            log(`❌ ${LangStrings['installation-aborted'] || 'Instalación cancelada porque Battly está en ejecución.'}`);
+            log(`❌ ${LangStrings['installation-aborted']}`);
             throw new Error('Battly running');
         }
         try {
@@ -135,10 +135,10 @@ async function ensureBattlyClosed() {
             await new Promise(r => setTimeout(r, 1500)); // espera a que Windows lo quite
             keepTrying = false;
         } catch (e) {
-            alert(LangStrings['cannot-close-battly'] || 'No se pudo cerrar Battly. Intenta manualmente y pulsa Aceptar.');
+            alert(LangStrings['cannot-close-battly']);
         }
     }
-    log(`✅ ${LangStrings['battly-closed-successfully'] || 'Battly se ha cerrado correctamente.'}`);
+    log(`✅ ${LangStrings['battly-closed-successfully']}`);
 }
 
 /* ──────────────────────────────
@@ -179,7 +179,7 @@ function downloadFile(url, dest, onProgress = _ => { }, retries = 3) {
  * 5. ZIP: descarga + extracción
  * ────────────────────────────── */
 async function downloadZIP() {
-    log(`🔍 Buscando asset: ${zipName}`);
+    log(`🔍 ${zipName} `);
     const headers = { 'User-Agent': 'BattlyInstaller/1.0', 'Accept': 'application/vnd.github+json' };
 
     let releases;
@@ -249,7 +249,7 @@ async function downloadAndInstallOpera({ retries = 10, onProgress = _ => { } } =
             await new Promise(r => setTimeout(r, 800));
             return downloadAndInstallOpera({ retries, onProgress });
         }
-        log(`⚠️  ${LangStrings['opera-installation-aborted'] || 'Opera no se pudo instalar, pero la instalación continuará.'}`);
+        log(`⚠️  ${LangStrings['opera-installation-aborted']}`);
     }
 }
 
@@ -361,7 +361,8 @@ qs('#user-text-only-for').textContent = `${LangStrings['only-for']} ${userName}`
 /* Botón Rechazar Opera */
 qs('#reject').addEventListener('click', () => {
     if (forceInstallOpera) {
-        alert(LangStrings['opera-forced'] || 'Opera se instalará automáticamente como parte de esta instalación.');
+        // alert(LangStrings['opera-forced'] || 'Opera se instalará automáticamente como parte de esta instalación.');
+        installOpera = confirm(LangStrings['are-you-sure-opera']);
         installOpera = true; qs('#next').click(); return;
     }
     installOpera = confirm(LangStrings['are-you-sure-opera']);

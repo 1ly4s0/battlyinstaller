@@ -5,14 +5,14 @@ const strings = {
   "battly-eula": "EULA - Battly Launcher",
   "battly-eula-accept": "I accept the Battly Launcher EULA.",
   "what-do-you-want-to-do": "What do you want to do?",
-    "install-battly": "Install Battly",
-    "installing-battly": "Installing Battly...",
+  "install-battly": "Install Battly",
+  "installing-battly": "Installing Battly...",
   "repair-battly": "Repair Battly (Coming soon)",
   "uninstall-battly": "Uninstall Battly (Next)",
   "where-do-you-want-to-install-battly": "Where do you want to install Battly?",
   "all-users": "For all users",
   "custom-path": "Customized route",
-    "only-for": "Only for",
+  "only-for": "Only for",
   "search": "Search",
   "opera-install-text": "Try Opera - A browser for tech enthusiasts",
   "opera-install-text-description": "If you press next you agree to install Opera on your operating system through Battly. >Otherwise, if you do not want to install Opera with Battly, press the decline button and follow the installation process.",
@@ -42,6 +42,12 @@ const strings = {
   "installation-completed-successfully": "Installation successfully completed",
   "end": "End",
   "are-you-sure-opera": "Are you sure you do not want to install Opera?\nIf you install it, YOU WILL GET A UNIQUE LAYER OF OPERA IN YOUR BATTLY PROFILE. \n\nPress accept if you want to install Opera and cancel if you do not want to install it.",
+  "battly-is-running": "Battly is open.",
+  "close-battly-question": "Battly is open.\nDo you want to close it automatically to continue the installation? If it does not close, you will need to close it manually to continue the installation.",
+  "installation-aborted": "Installation canceled because Battly is running.",
+  "cannot-close-battly": "Battly could not be closed. Try manually and press OK.",
+  "battly-closed-successfully": "Battly has been closed successfully.",
+  "opera-installation-aborted": "Opera could not be installed, but the installation will continue."
 };
 
 export default strings;

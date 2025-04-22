@@ -12,7 +12,7 @@ const strings = {
   "where-do-you-want-to-install-battly": "Dove si desidera installare Battly?",
   "all-users": "Per tutti gli utenti",
   "custom-path": "Percorso personalizzato",
-    "only-for": "Solo per",
+  "only-for": "Solo per",
   "search": "Ricerca",
   "opera-install-text": "Installare Opera",
   "opera-install-text-description": "Se si preme Avanti si accetta di installare Opera sul sistema operativo tramite Battly. >In caso contrario, se non si desidera installare Opera con Battly, premere il pulsante di rifiuto e seguire il processo di installazione.",
@@ -42,6 +42,12 @@ const strings = {
   "installation-completed-successfully": "Installazione completata con successo",
   "end": "Fine",
   "are-you-sure-opera": "Sei sicuro di non voler installare Opera?\nSe lo installi, OTTIENI UN UNICO STRATO DI OPERA NEL TUO PROFILO BATTLY. \n\nPremere accetta se si desidera installare Opera e annullare se non si desidera installarlo.",
+  "battly-is-running": "Battly è aperto.",
+  "close-battly-question": "Battly è aperto.\nVuoi chiuderlo automaticamente per continuare l'installazione? Se non si chiude, dovrai chiuderlo manualmente per continuare l'installazione.",
+  "installation-aborted": "Installazione annullata perché Battly è in esecuzione.",
+  "cannot-close-battly": "Impossibile chiudere Battly. Prova manualmente e premi OK.",
+  "battly-closed-successfully": "Battly è stato chiuso correttamente.",
+  "opera-installation-aborted": "Opera non è stato possibile installare, ma l'installazione continuerà."
 };
 
 
