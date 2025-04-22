@@ -2,13 +2,14 @@ const strings = {
     "next": "Siguiente",
     "back": "Volver",
     "reject": "Rechazar",
+    "cancel": "Cancelar",
     "battly-eula": "EULA - Battly Launcher",
     "battly-eula-accept": "Acepto la EULA - Battly Launcher.",
     "what-do-you-want-to-do": "¿Qué quieres hacer?",
     "install-battly": "Instalar Battly",
     "installing-battly": "Instalando Battly...",
     "repair-battly": "Reparar Battly (Próximamente)",
-    "uninstall-battly": "Desinstalar Battly (Próximamente)",
+    "uninstall-battly": "Desinstalar Battly",
     "where-do-you-want-to-install-battly": "¿Dónde quieres instalar Battly?",
     "all-users": "Para todos los usuarios",
     "custom-path": "Ruta personalizada",
@@ -41,7 +42,14 @@ const strings = {
     "temporary-files-cleaned-successfully": "Archivos temporales limpiados correctamente",
     "installation-completed-successfully": "Instalación completada con éxito",
     "end": "Finalizar",
-
+    "are-you-sure-opera": "¿Estás seguro de no querer instalar Opera?\nSi lo instalas, OBTENDRÁS UNA CAPA ÚNICA DE OPERA EN TU PERFIL DE BATTLY. \n\nPresiona aceptar si quieres instalar Opera y cancelar si no quieres instalarlo.",
+    "are-u-sure-uninstall": "¿Estás seguro de que deseas desinstalar Battly?",
+    "are-u-sure-uninstall-desc": "Si desinstalas Battly, se eliminarán todos los datos de tu cuenta y no podrás recuperarlos.Tus mundos, configuraciones y archivos de Minecraft no se perderán, pero todos los datos del Launcher serán eliminados.<br><br> Si deseas volver a instalar Battly en el futuro, tendrás que volver a descargarlo e instalarlo con este instalador.<br><br>¿Estás seguro de que deseas desinstalar Battly ?",
+    "uninstalling-battly": "Desinstalando Battly...",
+    "please-wait-uninstalling-battly": "Por favor, espera mientras se desinstala Battly de tu sistema.",
+    "uninstall-err-1": "No se pudo encontrar la instalación de Battly en el sistema.",
+    "uninstall-err-2": "No se pudo encontrar la ubicación de instalación para Battly.",
+    "uninstall-err-3": "El archivo de desinstalación no se encontró en la ubicación esperada.",
 };
 
 export default strings;

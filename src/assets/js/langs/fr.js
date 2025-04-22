@@ -40,7 +40,8 @@ const strings = {
   "cleaning-temporary-files": "Nettoyage des fichiers temporaires...",
   "temporary-files-cleaned-successfully": "Les fichiers temporaires ont été nettoyés avec succès",
   "installation-completed-successfully": "L'installation a été effectuée avec succès",
-  "end": "Fin"
+  "end": "Fin",
+  "are-you-sure-opera": "Êtes-vous sûr de ne pas vouloir installer Opera ?\nSi vous l'installez, VOUS OBTIENDREZ UNE COUCHE UNIQUE D'OPERA DANS VOTRE PROFIL BATTLY. \n\nAppuyez sur accepter si vous voulez installer Opera et annuler si vous ne voulez pas l'installer.",
 };
 
 

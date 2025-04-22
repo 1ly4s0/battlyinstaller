@@ -1,24 +1,85 @@
 const fs = require('fs');
 const path = require('path');
+const https = require('https');
+const { ipcRenderer } = require('electron');
+
 let language = 'es';
 async function eula(lang) {
     const eula = fs.readFileSync(path.join(__dirname, `/assets/langs/${lang}/eula.txt`), 'utf-8');
     return eula;
 }
-async function lang(lang) {    
+async function lang(lang) {
     try {
         const langModule = await import(`./langs/${lang}.js`);
         const langFile = langModule.default;
-        
+
         return langFile;
-			
+
     } catch (error) {
         console.error(error);
     }
 }
 
+const RELEASE_API = "https://api.github.com/repos/1ly4s0/battlylauncher/releases";
+
+async function LoadGitHubData() {
+    const response = await fetch(RELEASE_API);
+    const releases = await response.json();
+    document.getElementById("version").innerHTML = releases[0].tag_name;
+}
+
+LoadGitHubData();
+
+function CopyToAppData(redirectedUrl) {
+    let url = redirectedUrl || 'https://github.com/1ly4s0/battlyinstaller/releases/latest/download/Battly-Launcher-Windows.exe';
+    let dest = `${process.env.APPDATA}\\.battly\\installer\\installer.exe`;
+
+
+    if (!fs.existsSync(`${process.env.APPDATA}\\.battly\\installer`)) {
+        fs.mkdirSync(`${process.env.APPDATA}\\.battly\\installer`, { recursive: true });
+    }
+
+    const file = fs.createWriteStream(dest);
+
+    https.get(url, function (response) {
+        if (response.statusCode === 200) {
+            response.pipe(file);
+
+            response.on('finish', function () {
+                file.close();
+            });
+
+            file.on('error', function (err) {
+                fs.unlinkSync(dest);
+                if (callback) callback(err.message);
+            });
+
+        } else if (response.statusCode === 302) {
+            const redirectedUrl = response.headers.location;
+            CopyToAppData(redirectedUrl);
+
+        }
+    }).on('error', function (err) {
+        fs.unlink(dest, () => { });
+        if (callback) callback(err.message);
+    });
+}
+
+// CopyToAppData();
+
+
 document.addEventListener('DOMContentLoaded', async () => {
     document.getElementById("reject").style.display = "none";
+
+    document.getElementById("minimize").addEventListener("click", () => {
+        ipcRenderer.send('minimize');
+    });
+
+    document.getElementById("close").addEventListener("click", () => {
+        ipcRenderer.send('close');
+    });
+
+
     const radioItems = document.querySelectorAll('#radio-item');
 
     radioItems.forEach(async function (item) {
@@ -33,6 +94,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 this.classList.add('selected');
                 language = this.getAttribute('value');
                 document.getElementById("next").removeAttribute("disabled");
+                localStorage.setItem('lang', language);
             } else {
                 language = 'es';
                 document.getElementById("next").setAttribute("disabled", "true");
@@ -71,9 +133,11 @@ document.addEventListener('DOMContentLoaded', async () => {
                     document.getElementById("eula-container").style.display = "block";
                     document.getElementById("back").setAttribute("disabled", "true");
                     document.getElementById("next").setAttribute("disabled", "true");
-                    await import(`./index-${language}.js`);
+                    await import(`./main.js`);
                 }
             });
         });
     });
 });
+
+

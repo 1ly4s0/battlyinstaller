@@ -40,7 +40,8 @@ const strings = {
   "cleaning-temporary-files": "Cleaning temporary files...",
   "temporary-files-cleaned-successfully": "Temporary files cleaned up correctly",
   "installation-completed-successfully": "Installation successfully completed",
-  "end": "End"
+  "end": "End",
+  "are-you-sure-opera": "Are you sure you do not want to install Opera?\nIf you install it, YOU WILL GET A UNIQUE LAYER OF OPERA IN YOUR BATTLY PROFILE. \n\nPress accept if you want to install Opera and cancel if you do not want to install it.",
 };
 
 export default strings;

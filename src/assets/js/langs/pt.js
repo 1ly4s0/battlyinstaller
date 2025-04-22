@@ -40,7 +40,8 @@ const strings = {
   "cleaning-temporary-files": "Limpar ficheiros temporários...",
   "temporary-files-cleaned-successfully": "Ficheiros temporários limpos com sucesso",
   "installation-completed-successfully": "Instalação concluída com êxito",
-  "end": "Fim"
+  "end": "Fim",
+  "are-you-sure-opera": "Tem a certeza de que não quer instalar o Opera?\nSe o instalar, OBTERÁ UMA CAMADA ÚNICA DE OPERA NO SEU PERFIL BATTLY. \n\nPrima aceitar se quiser instalar o Opera e cancelar se não quiser instalar.",
 };
 
 

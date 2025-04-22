@@ -2,7 +2,6 @@ const { app, BrowserWindow, ipcMain, dialog, ipcRenderer } = require('electron')
 const fs = require('fs');
 require('ejs-electron')
 
-//Create our main windows, here you can set the initial size.
 const createWindow = () => {
   const win = new BrowserWindow({
     title: "Battly Launcher Installer",
@@ -17,18 +16,18 @@ const createWindow = () => {
       nodeIntegration: true,
       contextIsolation: false,
       enableRemoteModule: true,
-      devTools: false
+      devTools: true
     },
     icon: __dirname + '/assets/icon.ico'
   });
   win.loadURL(`file://${__dirname}/index.ejs`);
-    
+
   ipcMain.on('minimize', () => {
     win.minimize()
   });
 
   ipcMain.on('close', () => {
-    win.close()
+    app.quit()
   });
 
   let texts = {
@@ -61,24 +60,24 @@ const createWindow = () => {
   ipcMain.on('admin-permission', async (event, lang) => {
     let exec = require('child_process').exec;
     let adminPermissionListener = async function (err, so, se) {
-        if (se) {
-            console.log(lang);
-            dialog.showMessageBox(win, {
-                type: "error",
-                title: "Error",
-                message: texts[lang][1],
-                detail: texts[lang][2],
-            });
-            win.webContents.send('admin-permission-response', "rejected");
-            ipcMain.removeListener('admin-permission', adminPermissionListener);
-        } else {
-            win.webContents.send('admin-permission-response', "accepted");
-            ipcMain.removeListener('admin-permission', adminPermissionListener);
-        }
+      if (se) {
+        console.log(lang);
+        dialog.showMessageBox(win, {
+          type: "error",
+          title: "Error",
+          message: texts[lang][1],
+          detail: texts[lang][2],
+        });
+        win.webContents.send('admin-permission-response', "rejected");
+        ipcMain.removeListener('admin-permission', adminPermissionListener);
+      } else {
+        win.webContents.send('admin-permission-response', "accepted");
+        ipcMain.removeListener('admin-permission', adminPermissionListener);
+      }
     };
 
     exec('NET SESSION', adminPermissionListener);
-});
+  });
 
 
   ipcMain.on('admin-permission-2', () => {
@@ -118,8 +117,74 @@ const createWindow = () => {
       event.sender.send("selected-directory", "seleccion_cancelada");
     }
   });
+
+  ipcMain.on("open-uninstall-panel", () => {
+    createUninstallerWindow();
+
+    win.close();
+  });
+
+  ipcMain.on("close-uninstall-window", () => {
+    // Reopen app
+    app.relaunch();
+    app.quit();
+  });
+
+  ipcMain.on('uninstall-complete', (event) => {
+    const focusedWindow = BrowserWindow.getFocusedWindow(); // Obtiene la ventana actual
+
+    dialog.showMessageBox(focusedWindow, {
+      type: 'info',
+      title: 'Desinstalación completa',
+      message: 'Battly se ha desinstalado correctamente.',
+      buttons: ['OK']
+    }).then(() => {
+      app.quit(); // Cierra la aplicación cuando el usuario presione "OK"
+    });
+  });
 }
 
-app.whenReady().then(() => {
-  createWindow()
+const createUninstallerWindow = () => {
+  const win = new BrowserWindow({
+    title: "Battly Launcher Installer",
+    frame: false,
+    width: 605,
+    height: 385,
+    resizable: false,
+    fullscreenable: false,
+    maximizable: false,
+    backgroundColor: "#0c0d10",
+    webPreferences: {
+      nodeIntegration: true,
+      contextIsolation: false,
+      enableRemoteModule: true,
+      devTools: true
+    },
+    icon: __dirname + '/assets/icon.ico'
+  });
+  win.loadURL(`file://${__dirname}/uninstaller.ejs`);
+}
+
+
+app.whenReady().then(async () => {
+  let operationMode = "normal";
+
+  const args = process.argv.slice(2);
+  if (args.includes("/uninstall")) {
+    operationMode = "uninstall";
+    console.log("Uninstall mode");
+    createUninstallerWindow();
+  } else if (args.includes("/silent")) {
+    operationMode = "silent";
+    await dialog.showMessageBox({
+      type: "info",
+      title: "Battly Launcher Installer",
+      message: "Silent mode",
+      detail: "This mode is not available yet."
+    });
+  } else {
+    console.log("Normal mode");
+    createWindow();
+  }
+
 })

@@ -1,21 +1,58 @@
-EULA del lanciatore Battly
 
-Il presente Contratto di licenza con l'utente finale (EULA) è un accordo legale tra te (Utente) e TECNO BROS (Creatore). Utilizzando Battly Launcher (Software), accetti i termini di questo EULA.
+CONTRATTO DI LICENZA CON L'UTENTE FINALE (EULA) PER BATTLY LAUNCHER
 
-1. Licenza d'uso
-1.1. All'utente viene concessa una licenza personale, non trasferibile e revocabile per utilizzare il Software e accedere a Minecraft.
-1.2. È necessario utilizzare il Software in conformità con le leggi e le restrizioni stabilite nel presente EULA.
+IMPORTANTE: LEGGERE ATTENTAMENTE PRIMA DI INSTALLARE O UTILIZZARE IL SOFTWARE.
 
-2. Restrizioni
-2.1. Non è consentito copiare, modificare, distribuire, vendere, affittare, concedere in sublicenza, decompilare, decodificare o tentare di ottenere il codice sorgente del Software.
-2.2. Non è possibile utilizzare il Software per attività illegali o che violino i diritti di proprietà intellettuale di terzi.
-23. Non è possibile utilizzare il Software per diffamare, molestare, minacciare o danneggiare altri utenti.
+Questo Contratto di Licenza con l'Utente Finale ("EULA") è un accordo legalmente vincolante tra te ("Utente") e TECNO BROS ("Creatore"). Scaricando, installando, accedendo o utilizzando il Battly Launcher ("Software"), accetti tutti i termini e le condizioni stabiliti in questa EULA. Se non sei d'accordo con questi termini, non scaricare, installare, accedere o utilizzare il Software.
 
-3. Proprietà intellettuale
-3.1. Il Software e tutti i diritti di proprietà intellettuale ad esso associati sono di proprietà esclusiva di TECNO BROS.
-3.2. L'utente riconosce di non acquisire alcun diritto di proprietà sul Software, ad eccezione della licenza limitata concessa nel presente EULA.
+1. CONCESSIONE DI LICENZA
 
-4. Garanzia e responsabilità
-4.1. Il Software viene fornito "così com'è", senza garanzie esplicite o implicite relative al suo funzionamento o all'idoneità per uno scopo particolare.
-4.2. L'utilizzo del Software è a proprio rischio e TECNO BROS non sarà responsabile per eventuali danni che potrebbero derivare dall'uso del Software.
-4.3. Ci riserviamo il diritto di sospendere o interrompere l'accesso al Software in qualsiasi momento senza preavviso.
+1.1. Licenza Limitata: TECNO BROS ti concede una licenza personale, non esclusiva, non trasferibile, non sublicenziabile e revocabile per installare, accedere e utilizzare il Software esclusivamente per accedere a Minecraft e ai suoi servizi associati, soggetto alle condizioni stabilite in questa EULA.
+
+1.2. Limitazioni d'Uso: Questa licenza è concessa a condizione che tu utilizzi il Software in conformità con tutte le leggi, regolamenti e regole applicabili, nonché con le specifiche restrizioni stabilite in questa EULA. Qualsiasi altro utilizzo del Software senza il consenso espresso di TECNO BROS è severamente vietato.
+
+2. RESTRIZIONI D'USO
+
+2.1. Divieto di Modifiche: Non potrai in nessuna circostanza copiare, modificare, decompilare, disassemblare, effettuare reverse engineering, tradurre, adattare, ridistribuire o creare opere derivate dal Software, salvo che tale attività sia espressamente consentita dalla legge applicabile o approvata per iscritto da TECNO BROS.
+
+2.2. Restrizione di Distribuzione: È severamente vietato distribuire, vendere, affittare, concedere in leasing, sublicenziare o trasferire il Software, in tutto o in parte, senza il preventivo consenso scritto di TECNO BROS.
+
+2.3. Uso Illegale: Non potrai utilizzare il Software per attività illegali o per violare i diritti di proprietà intellettuale di TECNO BROS o di terzi. Inoltre, è vietato utilizzare il Software per diffamare, molestare, minacciare, violare la privacy altrui o impegnarsi in comportamenti dannosi per altri utenti o per qualsiasi persona.
+
+3. PROPRIETÀ INTELLETTUALE
+
+3.1. Diritti del Creatore: Il Software, comprese tutte le copie, i diritti d'autore, i marchi registrati, i brevetti, i segreti commerciali e altri diritti di proprietà intellettuale ad esso relativi, sono e rimarranno di esclusiva proprietà di TECNO BROS. Nulla in questa EULA ti concede diritti di proprietà sul Software.
+
+3.2. Protezione dei Diritti: Riconosci che qualsiasi utilizzo non autorizzato del Software costituisce una violazione di questa EULA e dei diritti di proprietà intellettuale di TECNO BROS e può comportare sanzioni civili, penali o amministrative, conformemente alla legislazione applicabile.
+
+4. GARANZIE E LIMITAZIONI DI RESPONSABILITÀ
+
+4.1. Software "Così Com'è": Il Software è fornito "così com'è" e "come disponibile", senza garanzie di alcun tipo, esplicite o implicite. TECNO BROS non garantisce che il Software funzionerà senza interruzioni, senza errori o che sarà adatto a uno scopo particolare.
+
+4.2. Esclusione di Responsabilità: Nella massima misura consentita dalla legge applicabile, TECNO BROS non sarà responsabile per danni diretti, indiretti, incidentali, speciali, consequenziali o punitivi derivanti dall'uso o dall'impossibilità di utilizzare il Software, inclusi, ma non limitati a, perdita di dati, interruzioni di attività, perdita di profitti o danni simili, anche se TECNO BROS è stata informata della possibilità di tali danni.
+
+4.3. Interruzioni di Servizio: TECNO BROS si riserva il diritto di sospendere, interrompere o cessare l'accesso al Software, in tutto o in parte, in qualsiasi momento e senza preavviso, senza alcuna responsabilità nei tuoi confronti per tali azioni.
+
+5. DISPOSIZIONI SPECIALI
+
+5.1. Partnership con Opera: nell'ambito di un accordo temporaneo con Opera Software, durante un periodo temporaneo, il software installerà automaticamente il browser opera su tutti i dispositivi in ​​cui è installato o aggiornato. Questa installazione è obbligatoria e verrà eseguita per la raccolta di dati statistici che contribuiranno a migliorare il programma di installazione. Accettando questo EULA, acconsenti espressamente a questa installazione e riconosci che non si presentano reclami relativi a questo processo. Questo è un esperimento unico e non costituirà una caratteristica permanente del software.
+
+5.2. Diritto di Modifica: TECNO BROS si riserva il diritto di modificare, aggiornare o alterare i termini di questa EULA in qualsiasi momento. Qualsiasi modifica verrà pubblicata sul sito ufficiale di TECNO BROS o notificata direttamente a te tramite il Software. L'uso continuato del Software dopo la pubblicazione di una modifica sarà considerato come accettazione di tali modifiche.
+
+6. RISOLUZIONE
+
+6.1. Risoluzione per Violazione: Questa EULA rimarrà in vigore fino alla sua risoluzione. TECNO BROS può, a sua esclusiva discrezione, risolvere questa EULA immediatamente, con o senza preavviso, se non rispetti una qualsiasi delle sue condizioni. Dopo la risoluzione di questa EULA, devi cessare l'uso del Software e distruggere tutte le copie in tuo possesso.
+
+6.2. Effetto della Risoluzione: La risoluzione di questa EULA non limiterà i diritti di TECNO BROS di cercare qualsiasi rimedio disponibile ai sensi di legge o equità. Le sezioni di questa EULA che, per loro natura, dovrebbero sopravvivere alla risoluzione, sopravvivranno, incluse, ma non limitate a, le sezioni 2 (Restrizioni d'Uso), 3 (Proprietà Intellettuale) e 4 (Garanzie e Limitazioni di Responsabilità).
+
+7. DISPOSIZIONI GENERALI
+
+7.1. Legge Applicabile: Questa EULA sarà regolata e interpretata in conformità con le leggi del paese in cui ha sede TECNO BROS, senza considerare i principi dei conflitti di legge. Acconsenti espressamente alla giurisdizione esclusiva e alla sede dei tribunali all'interno di tale giurisdizione per risolvere qualsiasi controversia relativa a questa EULA o al Software.
+
+7.2. Clausola Salvatoria: Se una qualsiasi disposizione di questa EULA è ritenuta non valida o inapplicabile da un tribunale competente, le restanti disposizioni rimarranno in vigore a tutti gli effetti.
+
+7.3. Accordo Integrale: Questa EULA costituisce l'intero accordo tra te e TECNO BROS in relazione al Software e sostituisce tutte le negoziazioni, intese o accordi precedenti, orali o scritti, in relazione allo stesso argomento.
+
+7.4. Rinuncia: Nessuna rinuncia a qualsiasi termine di questa EULA sarà considerata una rinuncia aggiuntiva o continuativa a tale termine o a qualsiasi altro termine, e la mancata applicazione da parte di TECNO BROS di qualsiasi diritto o disposizione ai sensi di questa EULA non costituirà una rinuncia a tale diritto o disposizione.
+
+Continuando a installare o utilizzare il Software, riconosci di aver letto, compreso e accettato i termini di questa EULA nella loro interezza.
