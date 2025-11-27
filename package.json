@@ -32,12 +32,6 @@
       "src/**/*",
       "!src/Battly-Launcher-win.zip"
     ],
-    "extraResources": [
-      {
-        "from": "src/Battly-Launcher-win.zip",
-        "to": "Battly-Launcher-win.zip"
-      }
-    ],
     "win": {
       "artifactName": "BattlyInstaller-${arch}.${ext}",
       "icon": "src/assets/icon.ico",
@@ -63,7 +57,10 @@
       "deleteAppDataOnUninstall": true,
       "warningsAsErrors": false
     },
-    "compression": "normal"
+    "compression": "normal",
+    "portable": {
+      "splashImage": "src/assets/splash.bmp"
+    }
   },
   "dependencies": {
     "adm-zip": "^0.5.16"
