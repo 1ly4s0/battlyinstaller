@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Instalador Battly Launcher</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="../assets/icon.ico">
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Color+Emoji&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Barra de título personalizada (frameless) -->
+    <div class="titlebar" id="titlebar">
+        <div class="titlebar-drag">Battly Installer</div>
+        <div class="titlebar-controls">
+            <button class="titlebar-btn" id="btn-minimize" aria-label="Minimizar" title="Minimizar">
+                <svg width="11" height="11" viewBox="0 0 11 11">
+                    <path d="M0 5.5h11" stroke="currentColor" stroke-width="1" />
+                </svg>
+            </button>
+            <button class="titlebar-btn" id="btn-maximize" aria-label="Maximizar" title="Maximizar">
+                <svg width="11" height="11" viewBox="0 0 11 11">
+                    <path d="M0 0v11h11V0H0zm1 1h9v9H1V1z" fill="currentColor" />
+                </svg>
+            </button>
+            <button class="titlebar-btn close" id="btn-close" aria-label="Cerrar" title="Cerrar">
+                <svg width="11" height="11" viewBox="0 0 11 11">
+                    <path d="M0 0l11 11M11 0L0 11" stroke="currentColor" stroke-width="1.5" />
+                </svg>
+            </button>
+        </div>
+    </div>
+    <div class="container">
+        <div class="left">
+            <div class="brand">
+                <img src="../assets/icon.ico" alt="App banner" />
+                <h1 id="title">Battly Launcher</h1>
+                <p id="subtitle">Instalador oficial</p>
+            </div>
+
+            <div class="steps">
+                <div class="step" data-step="welcome"><span>1</span>
+                    <p data-i18n="stepWelcome">Bienvenida</p>
+                </div>
+                <div class="step" data-step="options"><span>2</span>
+                    <p data-i18n="stepOptions">Opciones</p>
+                </div>
+                <div class="step" data-step="path"><span>3</span>
+                    <p data-i18n="stepPath">Ruta</p>
+                </div>
+                <!-- Nueva pantalla EULA -->
+                <div class="step" data-step="eula"><span>4</span>
+                    <p data-i18n="stepEula">EULA</p>
+                </div>
+                <!-- Reemplazado "Resumen" por "Partners" -->
+                <div class="step" data-step="partners"><span>5</span>
+                    <p data-i18n="stepPartners">Partners</p>
+                </div>
+                <div class="step" data-step="progress"><span>6</span>
+                    <p data-i18n="stepProgress">Instalación</p>
+                </div>
+                <div class="step" data-step="done"><span>7</span>
+                    <p data-i18n="stepDone">Finalizar</p>
+                </div>
+            </div>
+
+            <div class="lang">
+                <select id="langSelect" aria-label="Language">
+                    <option value="es">🇪🇸 Español</option>
+                    <option value="en">🇬🇧 English</option>
+                    <option value="fr">🇫🇷 Français</option>
+                    <option value="de">🇩🇪 Deutsch</option>
+                    <option value="pt">🇧🇷 Português</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="right">
+            <!-- WELCOME -->
+            <section class="panel active" id="panel-welcome">
+                <div class="panel-content">
+                    <h2 class="title-hero" id="welcome-title" data-i18n="welcomeTitle">Bienvenido al instalador</h2>
+                    <p id="welcome-desc" data-i18n="welcomeDesc">Este asistente instalará, reparará o desinstalará
+                        Battly Launcher.</p>
+
+                    <div class="options-row">
+                        <label class="radio-card">
+                            <input type="radio" name="mode" value="install" checked>
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                                    <path fill="#ffffff"
+                                        d="M352 96C352 78.3 337.7 64 320 64C302.3 64 288 78.3 288 96L288 306.7L246.6 265.3C234.1 252.8 213.8 252.8 201.3 265.3C188.8 277.8 188.8 298.1 201.3 310.6L297.3 406.6C309.8 419.1 330.1 419.1 342.6 406.6L438.6 310.6C451.1 298.1 451.1 277.8 438.6 265.3C426.1 252.8 405.8 252.8 393.3 265.3L352 306.7L352 96zM160 384C124.7 384 96 412.7 96 448L96 480C96 515.3 124.7 544 160 544L480 544C515.3 544 544 515.3 544 480L544 448C544 412.7 515.3 384 480 384L433.1 384L376.5 440.6C345.3 471.8 294.6 471.8 263.4 440.6L206.9 384L160 384zM464 440C477.3 440 488 450.7 488 464C488 477.3 477.3 488 464 488C450.7 488 440 477.3 440 464C440 450.7 450.7 440 464 440z" />
+                                </svg>
+                                <h3 data-i18n="modeInstall">Instalar</h3>
+                                <p data-i18n="modeInstallDesc">Instala o actualiza Battly.</p>
+                            </div>
+                        </label>
+                        <label class="radio-card">
+                            <input type="radio" name="mode" value="repair">
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                                    <path fill="#ffffff"
+                                        d="M102.8 57.3C108.2 51.9 116.6 51.1 123 55.3L241.9 134.5C250.8 140.4 256.1 150.4 256.1 161.1L256.1 210.7L346.9 301.5C380.2 286.5 420.8 292.6 448.1 320L574.2 446.1C592.9 464.8 592.9 495.2 574.2 514L514.1 574.1C495.4 592.8 465 592.8 446.2 574.1L320.1 448C292.7 420.6 286.6 380.1 301.6 346.8L210.8 256L161.2 256C150.5 256 140.5 250.7 134.6 241.8L55.4 122.9C51.2 116.6 52 108.1 57.4 102.7L102.8 57.3zM247.8 360.8C241.5 397.7 250.1 436.7 274 468L179.1 563C151 591.1 105.4 591.1 77.3 563C49.2 534.9 49.2 489.3 77.3 461.2L212.7 325.7L247.9 360.8zM416.1 64C436.2 64 455.5 67.7 473.2 74.5C483.2 78.3 485 91 477.5 98.6L420.8 155.3C417.8 158.3 416.1 162.4 416.1 166.6L416.1 208C416.1 216.8 423.3 224 432.1 224L473.5 224C477.7 224 481.8 222.3 484.8 219.3L541.5 162.6C549.1 155.1 561.8 156.9 565.6 166.9C572.4 184.6 576.1 203.9 576.1 224C576.1 267.2 558.9 306.3 531.1 335.1L482 286C448.9 253 403.5 240.3 360.9 247.6L304.1 190.8L304.1 161.1L303.9 156.1C303.1 143.7 299.5 131.8 293.4 121.2C322.8 86.2 366.8 64 416.1 63.9z" />
+                                </svg>
+                                <h3 data-i18n="modeRepair">Reparar</h3>
+                                <p data-i18n="modeRepairDesc">Repara y re-registra componentes.</p>
+                            </div>
+                        </label>
+                        <label class="radio-card">
+                            <input type="radio" name="mode" value="uninstall">
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                                    <path fill="#ffffff"
+                                        d="M232.7 69.9L224 96L128 96C110.3 96 96 110.3 96 128C96 145.7 110.3 160 128 160L512 160C529.7 160 544 145.7 544 128C544 110.3 529.7 96 512 96L416 96L407.3 69.9C402.9 56.8 390.7 48 376.9 48L263.1 48C249.3 48 237.1 56.8 232.7 69.9zM512 208L128 208L149.1 531.1C150.7 556.4 171.7 576 197 576L443 576C468.3 576 489.3 556.4 490.9 531.1L512 208z" />
+                                </svg>
+                                <h3 data-i18n="modeUninstall">Desinstalar</h3>
+                                <p data-i18n="modeUninstallDesc">Elimina Battly por completo.</p>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="actions">
+                    <button id="btn-next-1" class="btn primary" data-i18n="btnNext">Siguiente</button>
+                </div>
+            </section>
+
+            <!-- OPTIONS -->
+            <section class="panel" id="panel-options">
+                <div class="panel-content">
+                    <h2 style="margin-top: 0px;" data-i18n="optionsTitle">Opciones de instalación</h2>
+
+                    <div class="scope-list">
+                        <label class="scope-card" id="scope-all-card">
+                            <input type="radio" name="scope" value="all">
+                            <div class="scope-main">
+                                <div class="scope-title" data-i18n="scopeAll">Para todos los usuarios <span
+                                        class="hint">(requiere
+                                        admin)</span>
+                                </div>
+                                <div class="scope-sub" id="path-all">C:\Program Files\Battly Launcher</div>
+                            </div>
+                        </label>
+
+                        <label class="scope-card" id="scope-current-card">
+                            <input type="radio" name="scope" value="current" checked>
+                            <div class="scope-main">
+                                <div class="scope-title" data-i18n="scopeCurrent">Solo para mí</div>
+                                <div class="scope-sub" id="path-current">%LOCALAPPDATA%\Programs\Battly Launcher</div>
+                            </div>
+                        </label>
+
+                        <label class="scope-card custom" id="scope-custom-card">
+                            <input type="radio" name="scope" value="custom">
+                            <div class="scope-main">
+                                <div class="scope-title" data-i18n="scopeCustom">Ruta personalizada</div>
+                                <div class="scope-sub" id="path-custom" data-i18n="pathPlaceholder">Selecciona una
+                                    carpeta</div>
+                            </div>
+                            <button class="btn small" id="btn-scope-browse" type="button"
+                                data-i18n="btnBrowse">Buscar</button>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="actions">
+                    <button class="btn" id="btn-prev-2" data-i18n="btnBack">Atrás</button>
+                    <button class="btn primary" id="btn-next-2" data-i18n="btnNext">Siguiente</button>
+                </div>
+            </section>
+
+            <!-- PATH (solo para "Ruta personalizada") -->
+            <section class="panel" id="panel-path">
+                <div class="panel-content">
+                    <h2 data-i18n="pathTitle">Selecciona la ruta de instalación</h2>
+                    <div class="path-row">
+                        <input id="installPath" readonly />
+                        <button id="btn-browse" class="btn" data-i18n="pathBrowse">Examinar</button>
+                    </div>
+                    <small data-i18n="pathHint">Se recomendará una ruta según el modo seleccionado.</small>
+                </div>
+                <div class="actions">
+                    <button class="btn" id="btn-prev-3" data-i18n="btnBack">Atrás</button>
+                    <button class="btn primary" id="btn-next-3" data-i18n="btnNext">Siguiente</button>
+                </div>
+            </section>
+
+            <!-- EULA (Acuerdo de Licencia) -->
+            <section class="panel" id="panel-eula">
+                <div class="panel-content">
+                    <h2 data-i18n="eulaTitle">Acuerdo de Licencia</h2>
+                    <div class="eula-container">
+                        <div class="eula-loading" id="eula-loading">
+                            <div class="spinner"></div>
+                            <p data-i18n="eulaLoadingText">Cargando acuerdo de licencia...</p>
+                        </div>
+                        <div class="eula-content" id="eula-content" style="display: none;">
+                            <div class="eula-text" id="eula-text"></div>
+                        </div>
+                        <div class="eula-error" id="eula-error" style="display: none;">
+                            <p><span data-i18n="eulaErrorText">Error al cargar el EULA:</span> <span class="error-msg"
+                                    id="eula-error-msg"></span></p>
+                            <button class="btn" id="btn-retry-eula" data-i18n="eulaRetryBtn">Reintentar</button>
+                        </div>
+                    </div>
+                    <div class="eula-accept">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="chk-eula">
+                            <span data-i18n="eulaAcceptLabel">Acepto los términos del acuerdo de licencia</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="actions">
+                    <button class="btn" id="btn-prev-eula" data-i18n="btnBack">Atrás</button>
+                    <button class="btn primary" id="btn-next-eula" disabled data-i18n="btnNext">Siguiente</button>
+                </div>
+            </section>
+
+            <!-- PARTNERS (nuevo) -->
+            <section class="panel" id="panel-partners">
+                <div class="panel-content">
+                    <h2 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem;" data-i18n="partnersTitle">
+                        Prueba Opera - El navegador
+                        para
+                        los amantes de la tecnología</h2>
+
+                    <div
+                        style="display: flex; gap: 2rem; align-items: center; padding: 20px; background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%); border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);">
+                        <!-- Imagen de Opera (según idioma) -->
+                        <div style="flex-shrink: 0;">
+                            <img id="opera-preview-img" src="../assets/opera_banner_es.png" alt="Opera Browser"
+                                style="width: 320px; height: auto; border-radius: 8px;" />
+                        </div>
+
+                        <!-- Contenido -->
+                        <div style="flex: 1;">
+                            <p style="font-size: 0.95rem; opacity: 0.9;" data-i18n="partnersDesc">
+                                Opera es un navegador moderno que incluye VPN gratuita, bloqueador de anuncios integrado
+                                y
+                                múltiples funciones para mejorar tu experiencia en línea.
+                            </p>
+
+                            <!-- Checkbox para instalar Opera -->
+                            <label class="checkbox-label"
+                                style="display: flex; align-items: center; gap: 0.75rem; cursor: pointer; padding: 10px; background: rgba(255,255,255,0.05); border-radius: 8px; transition: all 0.2s;">
+                                <input type="checkbox" id="chk-opera" checked
+                                    style="width: 20px; height: 20px; cursor: pointer;">
+                                <span style="font-size: 1rem; font-weight: 500;" data-i18n="partnersCheckbox">Instalar
+                                    Opera junto con Battly</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="actions">
+                    <button class="btn" id="btn-prev-4" data-i18n="btnBack">Atrás</button>
+                    <button class="btn primary" id="btn-install" data-i18n="btnInstall">Instalar</button>
+                </div>
+            </section>
+
+            <!-- PROGRESS -->
+            <section class="panel" id="panel-progress">
+                <div class="panel-content">
+                    <div class="progress-hero">
+                        <img src="../assets/icon.ico" alt="Battly Logo" class="hero-logo" />
+                        <h2 id="t-progress-title" class="title-hero hero-title" data-i18n="progressTitle">Instalando
+                            Battly Launcher</h2>
+                        <button class="btn link" id="btn-toggle-details" type="button"
+                            data-i18n="progressShowDetails">Mostrar detalles</button>
+                    </div>
+
+                    <div id="progressBox" class="progress">
+                        <div class="bar" id="bar"></div>
+                    </div>
+
+                    <div class="log-wrap" id="log-wrap">
+                        <pre id="log" class="log"></pre>
+                    </div>
+                </div>
+            </section>
+
+            <!-- DONE -->
+            <section class="panel" id="panel-done">
+                <div class="panel-content">
+                    <div class="result">
+                        <div class="checkmark" aria-hidden="true">
+                            <!-- SVG del check -->
+                            <svg viewBox="0 0 120 120" width="180" height="180">
+                                <defs>
+                                    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+                                        <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#22c55e"
+                                            flood-opacity="0.55" />
+                                    </filter>
+                                </defs>
+                                <circle cx="60" cy="60" r="52" fill="#0f172a" stroke="#22c55e" stroke-width="8"
+                                    filter="url(#glow)" />
+                                <path d="M36 63 L54 78 L86 44" fill="none" stroke="#22c55e" stroke-width="10"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <h2 class="title-hero done-title" data-i18n="doneTitle">¡Battly instalado correctamente!</h2>
+                    </div>
+                </div>
+
+                <div id="done-error" class="error-msg"
+                    style="display:none; margin-top: 12px; padding: 8px 12px; background: rgba(248, 113, 113, 0.06); border: 1px solid rgba(248,113,113,0.18); border-radius: 8px; color: #f87171; font-size: 13px;">
+                </div>
+
+                <div class="done-actions">
+                    <div id="launch-card" class="choice-card selected" role="button" tabindex="0" aria-pressed="true">
+                        <span data-i18n="doneLaunchCard">Abrir Battly ahora</span>
+                    </div>
+                    <button class="btn" id="btn-open-folder" data-i18n="btnOpenFolder">Abrir carpeta</button>
+                    <button class="btn primary" id="btn-finish" data-i18n="btnFinish">Finalizar</button>
+                </div>
+            </section>
+        </div>
+    </div>
+    <script src="./renderer.js"></script>
+</body>
+
+</html>
