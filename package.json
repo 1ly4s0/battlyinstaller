@@ -1,68 +1,11 @@
 {
   "name": "battly-installer",
-  "productName": "Battly Installer",
   "version": "2.0.0",
-  "description": "Instalador oficial de Battly Launcher con detección de actualizaciones y soporte multi-idioma",
-  "main": "src/main.js",
-  "author": "TECNO BROS",
-  "license": "MIT",
-  "private": true,
   "scripts": {
-    "start": "electron .",
-    "dev": "electron .",
-    "build": "electron-builder",
-    "build:portable": "electron-builder --win portable --x64",
-    "build:store": "node build-store-installer.js",
-    "build:all": "electron-builder --win portable --x64 --ia32",
-    "lint": "echo \"No linter configured\""
+    "tauri": "tauri",
+    "build": "tauri build"
   },
   "devDependencies": {
-    "electron": "^31.0.0",
-    "electron-builder": "^25.1.8",
-    "pkg": "^5.8.1"
-  },
-  "build": {
-    "appId": "com.tecnobros.battlyinstaller",
-    "productName": "Battly Installer",
-    "copyright": "Copyright © 2025 TECNO BROS",
-    "directories": {
-      "output": "dist"
-    },
-    "files": [
-      "src/**/*",
-      "!src/Battly-Launcher-win.zip"
-    ],
-    "win": {
-      "artifactName": "BattlyInstaller-${arch}.${ext}",
-      "icon": "src/assets/icon.ico",
-      "target": [
-        {
-          "target": "portable",
-          "arch": [
-            "x64",
-            "ia32"
-          ]
-        }
-      ]
-    },
-    "nsis": {
-      "oneClick": false,
-      "allowToChangeInstallationDirectory": false,
-      "perMachine": false,
-      "createDesktopShortcut": true,
-      "createStartMenuShortcut": true,
-      "runAfterFinish": false,
-      "installerIcon": "src/assets/icon.ico",
-      "uninstallerIcon": "src/assets/icon.ico",
-      "deleteAppDataOnUninstall": true,
-      "warningsAsErrors": false
-    },
-    "compression": "normal",
-    "portable": {
-      "splashImage": "src/assets/splash.bmp"
-    }
-  },
-  "dependencies": {
-    "adm-zip": "^0.5.16"
+    "@tauri-apps/cli": "^1.5.0"
   }
 }

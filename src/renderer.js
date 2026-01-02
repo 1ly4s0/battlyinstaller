@@ -350,12 +350,29 @@ function updateProgressTitleForMode() {
 async function maybeElevate() {
     const needsAdmin = (state.scope === 'all') || state.installPath.toLowerCase().startsWith('c:\\program files');
     if (needsAdmin) {
-        const res = await bridge.elevateIfNeeded(true);
-        if (!res?.elevated) throw new Error('No se pudo obtener privilegios de administrador.');
+        const stateJson = JSON.stringify(state);
+        const res = await bridge.elevateIfNeeded(true, stateJson);
+        if (res !== true && !res?.elevated) throw new Error('No se pudo obtener privilegios de administrador.');
     }
 }
 
 async function init() {
+    try {
+        const args = await bridge.getStartupArgs();
+        const stateIndex = args.indexOf('--state');
+        if (stateIndex !== -1 && args[stateIndex + 1]) {
+            const restoredState = JSON.parse(args[stateIndex + 1]);
+            Object.assign(state, restoredState);
+
+            if (state.lang) {
+                await loadLang(state.lang);
+            }
+            
+            startProcess();
+            return;
+        }
+    } catch (e) { console.error(e); }
+
     // Detectar si se ejecutÃ³ como desinstalador
     const uninstallMode = await bridge.isUninstallMode();
 
@@ -410,6 +427,10 @@ async function init() {
 
                 // Marcar que estamos en modo desinstalaciÃ³n para modificar el comportamiento del botÃ³n
                 state.skipToProgress = true;
+
+                // Asegurar que el radio button de desinstalaciÃ³n estÃ© marcado para mantener consistencia
+                const uninstallRadio = document.querySelector('input[name="mode"][value="uninstall"]');
+                if (uninstallRadio) uninstallRadio.checked = true;
             } else {
 
                 // Sugerir actualizaciÃ³n si ya estÃ¡ instalado
@@ -447,21 +468,9 @@ async function init() {
         }
     });
 
-    $('#btn-next-1').addEventListener('click', () => {
-        getMode(); // Obtener el modo seleccionado antes de navegar
-
-        // Si el usuario seleccionÃ³ desinstalar manualmente, activar skipToProgress
-        if (state.mode === 'uninstall') {
-            state.skipToProgress = true;
-        }
-
-        // En modo desinstalaciÃ³n, ir directo a progreso
-        if (state.skipToProgress) {
-            goto('progress');
-        } else {
-            goto('options');
-        }
-    });
+    // Eliminar el listener anterior de btn-next-1 para evitar duplicados o conflictos
+    // (Nota: en JS puro no se puede eliminar fÃ¡cilmente una funciÃ³n anÃ³nima, pero aquÃ­ estamos reescribiendo el archivo)
+    // El bloque anterior ya fue reemplazado por la nueva lÃ³gica que incluye startProcess()
 
     // Actualizar texto del botÃ³n si estamos en modo desinstalaciÃ³n
     if (state.skipToProgress) {
@@ -615,6 +624,9 @@ async function init() {
                 break;
             case 'download:done': setProgress(72); progressBox.classList.remove('download'); break;
             case 'extract:start': setProgress(75); break;
+            case 'extract:progress':
+                if (typeof data.percent === 'number') setProgress(Math.max(75, Math.min(85, data.percent)));
+                break;
             case 'extract:done': setProgress(85); break;
             case 'post:flatten': setProgress(88); break;
             case 'shortcuts': setProgress(92); break;
@@ -637,7 +649,7 @@ async function init() {
     });
 
     // ===== Lanzar instalaciÃ³n =====
-    $('#btn-install').addEventListener('click', async () => {
+    async function startProcess() {
         goto('progress'); setProgress(5);
         try {
             updateProgressTitleForMode();
@@ -646,18 +658,31 @@ async function init() {
             await maybeElevate();
             setProgress(10);
 
+            let finalTargetDir = state.installPath;
+            if (state.scope === 'custom') {
+                let normalized = finalTargetDir.replace(/\//g, '\\');
+                if (normalized.endsWith('\\')) normalized = normalized.slice(0, -1);
+
+                if (!normalized.endsWith('\\Battly Launcher')) {
+                    finalTargetDir = normalized + '\\Battly Launcher';
+                } else {
+                    finalTargetDir = normalized;
+                }
+            }
+
             const payload = {
                 appId: 'com.tecnobros.battlylauncher',
                 appName: 'Battly Launcher',
-                version: '3.0.0',
+                version: state.version,
                 publisher: 'TECNO BROS',
                 exeName: 'Battly Launcher.exe',
                 mode: state.mode,
-                targetDir: state.installPath,
+                targetDir: finalTargetDir,
                 scope: state.scope,
                 langs: state.langs,
                 downloadUrl: state.downloadUrl,
-                installOpera: state.forceOpera ? true : state.installOpera
+                installOpera: state.forceOpera ? true : state.installOpera,
+                openByeURL: true
             };
 
             if (state.mode === 'install') {
@@ -695,6 +720,27 @@ async function init() {
         } catch (e) {
             log('ERROR: ' + (e?.message || String(e)));
             setProgress(100);
+        }
+    }
+
+    $('#btn-install').addEventListener('click', startProcess);
+
+    $('#btn-next-1').addEventListener('click', () => {
+        // Solo leer el modo de la UI si NO estamos en un flujo forzado (como desinstalaciÃ³n automÃ¡tica)
+        if (!state.skipToProgress) {
+            getMode();
+        }
+
+        // Si el usuario seleccionÃ³ desinstalar manualmente, activar skipToProgress
+        if (state.mode === 'uninstall') {
+            state.skipToProgress = true;
+        }
+
+        // En modo desinstalaciÃ³n, ir directo a progreso
+        if (state.skipToProgress) {
+            startProcess();
+        } else {
+            goto('options');
         }
     });
 
