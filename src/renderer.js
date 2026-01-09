@@ -367,7 +367,7 @@ async function init() {
             if (state.lang) {
                 await loadLang(state.lang);
             }
-            
+
             startProcess();
             return;
         }

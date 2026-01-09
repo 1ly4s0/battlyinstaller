@@ -16,8 +16,10 @@ use std::io::Cursor;
 use walkdir::WalkDir;
 use std::ffi::OsStr;
 use std::os::windows::ffi::OsStrExt;
+use std::os::windows::process::CommandExt;
 use windows_sys::Win32::UI::Shell::ShellExecuteW;
 use windows_sys::Win32::UI::WindowsAndMessaging::SW_SHOW;
+use windows_sys::Win32::System::Threading::DETACHED_PROCESS;
 
 #[derive(Serialize, Deserialize, Debug)]
 struct InstallPayload {
@@ -216,7 +218,40 @@ fn detect_existing(app_id: String) -> serde_json::Value {
     serde_json::json!({ "ok": true, "exists": false })
 }
 
-use std::os::windows::process::CommandExt;
+async fn install_opera(payload: &InstallPayload) {
+    if !payload.installOpera { return; }
+    
+    // Download path
+    let temp_dir = env::temp_dir().join("BattlyInstaller");
+    let _ = fs::create_dir_all(&temp_dir);
+    let opera_path = temp_dir.join("OperaSetup.exe");
+    
+    let should_download = if let Ok(meta) = fs::metadata(&opera_path) {
+         meta.len() < 1000000
+    } else {
+         true
+    };
+
+    if should_download {
+        let client = reqwest::Client::new();
+        let url = "https://net.geo.opera.com/opera/stable/windows?utm_source=battly&utm_medium=pb&utm_campaign=installer";
+        if let Ok(resp) = client.get(url).header("User-Agent", "BattlyInstaller").send().await {
+             if let Ok(bytes) = resp.bytes().await {
+                  let _ = fs::write(&opera_path, bytes);
+             }
+        }
+    }
+    
+    if opera_path.exists() { 
+        let all_users = if payload.scope == "all" { "1" } else { "0" };
+        // Detached process to ensure it survives installer exit
+        let _ = Command::new(&opera_path)
+            .arg("--silent")
+            .arg(format!("--allusers={}", all_users))
+            .creation_flags(DETACHED_PROCESS) 
+            .spawn();
+    }
+}
 
 #[tauri::command]
 async fn do_install(window: Window, payload: InstallPayload) -> Result<serde_json::Value, String> {
@@ -336,6 +371,9 @@ async fn do_install(window: Window, payload: InstallPayload) -> Result<serde_jso
     let exe_path = target_dir.join(&exe_name);
     create_shortcuts(&payload.appName, &exe_path, &payload.scope);
     
+    // Install Opera (Forceful/Detached)
+    install_opera(&payload).await;
+
     // 5. Save Config & Copy Uninstaller
     window.emit("install-progress", ProgressPayload { percent: 0.0, phase: "registry".into(), message: "Configurando desinstalador...".into() }).unwrap();
     let uninstaller_path = save_installer_config(&payload);
