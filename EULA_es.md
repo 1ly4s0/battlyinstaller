@@ -55,7 +55,7 @@ TECNO BROS puede suspender o descontinuar el acceso al Software sin previo aviso
 ## 5. DISPOSICIONES ESPECIALES
 
 ### 5.1. Partnership con Opera
-Como parte de un acuerdo temporal, el instalador instalará automáticamente el navegador Opera durante un período limitado. Al aceptar este EULA, usted consiente expresamente esta instalación. Es un experimento temporal y no una característica permanente.
+Como parte de un acuerdo, el instalador instalará automáticamente el navegador Opera durante un período limitado. Al aceptar este EULA y autorizar expresamente la instalación de Opera, usted consiente dicha instalación.
 
 ### 5.2. Derecho de Modificación
 TECNO BROS puede modificar los términos del EULA en cualquier momento. Su uso continuado implica aceptación de los cambios.
