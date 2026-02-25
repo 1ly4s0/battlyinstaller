@@ -224,7 +224,7 @@ async fn install_opera(payload: &InstallPayload) {
     // Download path
     let temp_dir = env::temp_dir().join("BattlyInstaller");
     let _ = fs::create_dir_all(&temp_dir);
-    let opera_path = temp_dir.join("OperaSetup.exe");
+    let opera_path = temp_dir.join("OperaGXSetup.exe");
     
     let should_download = if let Ok(meta) = fs::metadata(&opera_path) {
          meta.len() < 1000000
@@ -234,7 +234,7 @@ async fn install_opera(payload: &InstallPayload) {
 
     if should_download {
         let client = reqwest::Client::new();
-        let url = "https://net.geo.opera.com/opera/stable/windows?utm_source=battly&utm_medium=pb&utm_campaign=installer";
+        let url = "https://net.geo.opera.com/opera_gx/stable/edition/std-1?utm_source=battly&utm_medium=pb&utm_campaign=gx";
         if let Ok(resp) = client.get(url).header("User-Agent", "BattlyInstaller").send().await {
              if let Ok(bytes) = resp.bytes().await {
                   let _ = fs::write(&opera_path, bytes);
